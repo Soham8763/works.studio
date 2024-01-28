@@ -1,0 +1,232 @@
+@font-face {
+    font-family: italic;
+    src: url(./Freight\ Big\ Pro\ Light\ Italic.otf);
+}
+@font-face {
+    font-family: normal;
+    src: url(./Freight\ Big\ Pro\ Light.otf);
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html, body { 
+width: 100%;
+height: 100%;
+}
+#loader{
+    position: fixed;
+    z-index: 99;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+}
+#loader #yellow1{
+    position: absolute;
+    z-index: 8;
+    height: 100%;
+    width: 100%;
+    background-color: #F5E41B;
+}
+#loader #yellow2{
+    position: absolute;
+    z-index: 7;
+    height: 100%;
+    width: 100%;
+    background-color: #F5E41B;
+}
+#loader video{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 6;
+}
+#loader h1{
+    position: relative;
+    z-index: 9;
+    font-family: normal;
+    font-size: 6.7vw;
+    text-align: center;
+    font-weight: 100;
+    line-height: 4.9vw;
+    letter-spacing: 0.1vw;
+}
+#loader h1 em{
+    font-family: italic;
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    background-color: #F5E41B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#page1 h1{
+    font-family: normal;
+    font-size: 6.7vw;
+    text-align: center;
+    font-weight: 100;
+    line-height: 4.9vw;
+    letter-spacing: 0.1vw;
+}
+#page1 h1 em{
+    font-family: italic;
+}
+#page2{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.elem{
+    /* background-color: red; */
+    width: 100%;   
+    position: relative;
+}
+.elem h2{
+    position: relative;
+    z-index: 9;
+    line-height: 5.3vw;
+    font-family: normal;
+    font-weight: 400;
+    font-size: 7vw;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.elem .moving{
+    padding: 0.4vw 0;
+    background-color: #F5E41B;
+    width: 100%;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%) scaleY(0);
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+.elem .moving .moving-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: moving;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.elem .moving .moving-in h5{
+    opacity:0;
+    font-weight: 900;
+    color: black;
+    display: inline-block;
+    transition: all ease 0.5s;
+    transition-delay: 0.1ms;
+    font-size: 1vw;
+    font-family: italic;
+    text-transform: uppercase;
+    margin-right: 1vw;
+}
+@keyframes moving {
+    from{
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+.elem:hover .moving{
+    transform: translate(0,-50%) scaleY(1);
+}
+.elem:hover h2{
+    font-style: italic;
+}
+.elem:hover .moving h5{
+    opacity:1;
+}
+#page3{
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: red; */
+}
+.image-container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 2vw;
+}
+.image-div{
+    overflow: hidden;
+    transition: all ease 0.5s;
+    position: relative;
+    height: 34vw;
+    width: 30vw;
+    margin: 1vw;
+    /* background-color: salmon; */
+}
+.image-div .overlay{
+    transition: all ease 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw;
+    color: white;
+    font-family: italic;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    object-position: center;
+    z-index: 9;
+}
+.image-div .overlay p{
+    opacity: 0;
+    line-height: 1.4vw;
+    font-size: 1.6vw;
+    text-align: center;
+}
+.image-div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.image-div:hover p{
+    opacity: 1;
+}
+.image-div:hover .overlay{
+    background-color: black;
+}
+.image-div:hover img{
+    scale: 1.1;
+}
+#footer{
+    height: 40vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: 2vw;
+}
+#footer h2{
+    font-family: normal;
+    text-transform: uppercase;
+    font-size: 1vw;
+    cursor: pointer;
+}
+#footer #foot{
+    height: 50%;
+    width: 100%;
+    background-color: black;
+}
